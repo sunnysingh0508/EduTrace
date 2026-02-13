@@ -1,74 +1,61 @@
+import { LayoutDashboard, BookOpen, LogOut, UserCheck } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import {
-    LayoutDashboard,
-    CalendarCheck,
-    BookOpen,
-    FileBarChart,
-    Settings,
-    ShieldCheck,
-    LogOut
-} from 'lucide-react';
-import { motion } from 'framer-motion';
 
-const sidebarItems = [
-    { name: 'Dashboard', icon: LayoutDashboard, path: '/dashboard' },
-    { name: 'Attendance', icon: CalendarCheck, path: '/dashboard/attendance' },
-    { name: 'Curriculum', icon: BookOpen, path: '/dashboard/curriculum' },
-    { name: 'Reports', icon: FileBarChart, path: '/dashboard/reports' },
-    { name: 'Settings', icon: Settings, path: '/dashboard/settings' },
+const menuItems = [
+    { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard/overview' },
+    { icon: BookOpen, label: 'Classes', path: '/dashboard/classes' },
 ];
 
 const Sidebar = () => {
     const location = useLocation();
 
     return (
-        <aside className="hidden lg:flex flex-col w-64 h-screen bg-gray-50 border-r border-gray-200 fixed left-0 top-0">
-            {/* Logo */}
-            <div className="h-20 flex items-center px-6 border-b border-gray-100">
-                <Link to="/" className="flex items-center gap-2">
-                    <div className="bg-blue-600 p-1.5 rounded-lg">
-                        <ShieldCheck className="w-5 h-5 text-white" />
-                    </div>
-                    <span className="text-xl font-bold text-slate-800 tracking-tight">EduTrace</span>
-                </Link>
+        <div className="hidden lg:flex flex-col w-64 bg-white border-r border-gray-200 h-screen fixed left-0 top-0">
+            {/* Logo Area */}
+            <div className="flex items-center gap-3 px-6 h-20 border-b border-gray-100">
+                <div className="bg-blue-600 p-2 rounded-lg">
+                    <UserCheck className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-xl font-bold text-slate-800">EduTrace</span>
             </div>
 
-            {/* Navigation */}
-            <div className="flex-1 py-6 space-y-1 px-3">
-                {sidebarItems.map((item) => {
-                    const isActive = location.pathname === item.path;
-                    const Icon = item.icon;
-
+            {/* Navigation Menu */}
+            <div className="flex-1 overflow-y-auto py-6 px-4 space-y-1">
+                <p className="px-2 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Menu</p>
+                {menuItems.map((item) => {
+                    const isActive = location.pathname.startsWith(item.path);
                     return (
                         <Link
-                            key={item.name}
+                            key={item.path}
                             to={item.path}
-                            className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-all group ${isActive
-                                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20'
-                                    : 'text-gray-500 hover:bg-white hover:text-blue-600 hover:shadow-sm'
+                            className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors font-medium ${isActive
+                                ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20'
+                                : 'text-gray-600 hover:bg-gray-50 hover:text-slate-900'
                                 }`}
                         >
-                            <Icon size={20} className={isActive ? 'text-white' : 'text-gray-400 group-hover:text-blue-600'} />
-                            <span className="font-medium">{item.name}</span>
-                            {isActive && (
-                                <motion.div
-                                    layoutId="activeIndicator"
-                                    className="ml-auto w-1.5 h-1.5 rounded-full bg-white"
-                                />
-                            )}
+                            <item.icon size={20} />
+                            {item.label}
                         </Link>
                     );
                 })}
+
+
             </div>
 
-            {/* Bottom Actions */}
-            <div className="p-4 border-t border-gray-200">
-                <button className="flex items-center gap-3 px-3 py-3 w-full rounded-xl text-red-500 hover:bg-red-50 transition-colors">
-                    <LogOut size={20} />
-                    <span className="font-medium">Logout</span>
-                </button>
+            {/* Profile / Logout Section */}
+            <div className="p-4 border-t border-gray-100">
+                <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer group">
+                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">
+                        JD
+                    </div>
+                    <div className="flex-1">
+                        <p className="text-sm font-bold text-slate-800">John Doe</p>
+                        <p className="text-xs text-gray-500">Teacher</p>
+                    </div>
+                    <LogOut size={18} className="text-gray-400 group-hover:text-red-500 transition-colors" />
+                </div>
             </div>
-        </aside>
+        </div>
     );
 };
 

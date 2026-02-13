@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { ShieldCheck, Mail, Lock, CheckSquare, Square } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [rememberMe, setRememberMe] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <div className="bg-white rounded-2xl shadow-xl p-8 w-full">
@@ -20,6 +21,7 @@ const Login = () => {
             <form className="space-y-5" onSubmit={(e) => {
                 e.preventDefault();
                 console.log('Login attempt:', { rememberMe });
+                navigate('/dashboard/classes');
             }}>
                 <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1.5">Email Address</label>

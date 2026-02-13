@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Lock, User, Building } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const [role, setRole] = useState('student');
+    const navigate = useNavigate();
 
     return (
         <div className="bg-white rounded-2xl shadow-xl p-8 w-full">
@@ -32,6 +33,7 @@ const Register = () => {
             <form className="space-y-4" onSubmit={(e) => {
                 e.preventDefault();
                 console.log('Register attempt:', { role });
+                navigate('/dashboard/classes');
             }}>
                 <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
