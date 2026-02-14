@@ -40,7 +40,7 @@ const CreateClassModal = ({ isOpen, onClose }: CreateClassModalProps) => {
                                     <input
                                         type="text"
                                         placeholder="e.g. Data Structures"
-                                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                                        className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
                                     />
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
@@ -49,7 +49,7 @@ const CreateClassModal = ({ isOpen, onClose }: CreateClassModalProps) => {
                                         <input
                                             type="text"
                                             placeholder="CS-301"
-                                            className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                                            className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
                                         />
                                     </div>
                                     <div>
@@ -57,14 +57,14 @@ const CreateClassModal = ({ isOpen, onClose }: CreateClassModalProps) => {
                                         <input
                                             type="text"
                                             placeholder="3A"
-                                            className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                                            className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
                                         />
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
                                         <label className="block text-sm font-medium text-slate-700 mb-1">Semester</label>
-                                        <select className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all bg-white">
+                                        <select className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all bg-white">
                                             <option>Sem 1</option>
                                             <option>Sem 2</option>
                                             <option>Sem 3</option>
@@ -78,7 +78,7 @@ const CreateClassModal = ({ isOpen, onClose }: CreateClassModalProps) => {
                                         <input
                                             type="number"
                                             placeholder="60"
-                                            className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                                            className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
                                         />
                                     </div>
                                 </div>
@@ -88,7 +88,7 @@ const CreateClassModal = ({ isOpen, onClose }: CreateClassModalProps) => {
                                 <button onClick={onClose} className="flex-1 px-4 py-2.5 rounded-xl border border-gray-200 text-slate-600 font-medium hover:bg-white hover:border-gray-300 transition-all">
                                     Cancel
                                 </button>
-                                <button className="flex-1 px-4 py-2.5 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20">
+                                <button className="flex-1 px-4 py-2.5 rounded-xl bg-primary-600 text-white font-medium hover:bg-primary-700 transition-all shadow-lg shadow-primary-600/20">
                                     Create Class
                                 </button>
                             </div>

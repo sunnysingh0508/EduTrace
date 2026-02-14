@@ -1,4 +1,5 @@
 import { BookOpen, Users } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface ClassCardProps {
     id: number;
@@ -11,14 +12,15 @@ interface ClassCardProps {
     progress: number;
 }
 
-const ClassCard = ({ name, subject, section, semester, students, lectures, progress }: ClassCardProps) => {
+const ClassCard = ({ id, name, subject, section, semester, students, lectures, progress }: ClassCardProps) => {
+    const navigate = useNavigate();
     return (
         <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             {/* Header */}
             <div className="mb-4">
                 <div className="flex justify-between items-start mb-1">
                     <h3 className="text-lg font-bold text-slate-800">{name}</h3>
-                    <span className="bg-blue-50 text-blue-600 text-xs font-bold px-2 py-1 rounded-lg border border-blue-100">
+                    <span className="bg-primary-50 text-primary-600 text-xs font-bold px-2 py-1 rounded-lg border border-primary-100">
                         {semester}
                     </span>
                 </div>
@@ -51,11 +53,11 @@ const ClassCard = ({ name, subject, section, semester, students, lectures, progr
             <div className="mb-6">
                 <div className="flex justify-between items-center mb-2">
                     <span className="text-xs font-medium text-gray-500">Syllabus Completion</span>
-                    <span className="text-xs font-bold text-blue-600">{progress}%</span>
+                    <span className="text-xs font-bold text-primary-600">{progress}%</span>
                 </div>
                 <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
                     <div
-                        className="bg-blue-600 h-2 rounded-full transition-all duration-500"
+                        className="bg-primary-600 h-2 rounded-full transition-all duration-500"
                         style={{ width: `${progress}%` }}
                     />
                 </div>
@@ -63,8 +65,11 @@ const ClassCard = ({ name, subject, section, semester, students, lectures, progr
 
             {/* Actions */}
             <div className="flex gap-3">
-                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2.5 rounded-xl transition-colors shadow-lg shadow-blue-600/20">
-                    Start Attendance
+                <button
+                    onClick={() => navigate(`/dashboard/classes/${id}`)}
+                    className="w-full bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium py-2.5 rounded-xl transition-colors shadow-lg shadow-primary-600/20"
+                >
+                    View Details
                 </button>
             </div>
         </div>

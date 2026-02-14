@@ -1,9 +1,11 @@
-import { LayoutDashboard, BookOpen, LogOut, UserCheck } from 'lucide-react';
+import { LayoutDashboard, BookOpen, LogOut, UserCheck, FileText, Bell } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const menuItems = [
     { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard/overview' },
     { icon: BookOpen, label: 'Classes', path: '/dashboard/classes' },
+    { icon: FileText, label: 'Assignments', path: '/dashboard/assignments' },
+    { icon: Bell, label: 'Reminders', path: '/dashboard/reminders' },
 ];
 
 const Sidebar = () => {
@@ -13,7 +15,7 @@ const Sidebar = () => {
         <div className="hidden lg:flex flex-col w-64 bg-white border-r border-gray-200 h-screen fixed left-0 top-0">
             {/* Logo Area */}
             <div className="flex items-center gap-3 px-6 h-20 border-b border-gray-100">
-                <div className="bg-blue-600 p-2 rounded-lg">
+                <div className="bg-primary-600 p-2 rounded-lg">
                     <UserCheck className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-xl font-bold text-slate-800">EduTrace</span>
@@ -29,7 +31,7 @@ const Sidebar = () => {
                             key={item.path}
                             to={item.path}
                             className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors font-medium ${isActive
-                                ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20'
+                                ? 'bg-primary-600 text-white shadow-lg shadow-primary-600/20'
                                 : 'text-gray-600 hover:bg-gray-50 hover:text-slate-900'
                                 }`}
                         >
@@ -45,7 +47,7 @@ const Sidebar = () => {
             {/* Profile / Logout Section */}
             <div className="p-4 border-t border-gray-100">
                 <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer group">
-                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">
+                    <div className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-bold">
                         JD
                     </div>
                     <div className="flex-1">

@@ -6,7 +6,7 @@ const features = [
         icon: <Shield className="w-6 h-6" />,
         title: "Secure QR Rotation",
         description: "QR codes regenerate every 5 seconds to prevent snapshot sharing.",
-        color: "bg-blue-100 text-blue-600"
+        color: "bg-primary-100 text-primary-600"
     },
     {
         icon: <Smartphone className="w-6 h-6" />,
@@ -46,7 +46,7 @@ const Features = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-                        Powerful Features Designed for <span className="text-blue-600">Modern Classrooms</span>
+                        Powerful Features Designed for <span className="text-primary-600">Modern Classrooms</span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                         Everything you need to manage attendance, curriculum, and academic insights in one place.
@@ -61,13 +61,13 @@ const Features = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
-                            className="bg-white rounded-2xl p-8 border border-gray-100 hover:border-blue-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+                            className="bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
                         >
                             <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-colors ${feature.color}`}>
                                 {feature.icon}
                             </div>
 
-                            <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors">
+                            <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-primary-600 transition-colors">
                                 {feature.title}
                             </h3>
                             <p className="text-gray-600 text-sm leading-relaxed">

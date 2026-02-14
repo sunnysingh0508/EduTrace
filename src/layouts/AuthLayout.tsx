@@ -6,7 +6,7 @@ const AuthLayout = () => {
     return (
         <div className="min-h-screen flex bg-gray-50">
             {/* Left Side - Promotional Content (Desktop Only) */}
-            <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-blue-600 to-indigo-700 relative overflow-hidden items-center justify-center p-12">
+            <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary-600 to-primary-800 relative overflow-hidden items-center justify-center p-12">
                 {/* Abstract Background Shapes */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                     <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
@@ -23,21 +23,21 @@ const AuthLayout = () => {
 
                     <h1 className="text-5xl font-bold mb-6 leading-tight">
                         Secure Presence. <br />
-                        <span className="text-blue-200">Smarter Classrooms.</span>
+                        <span className="text-primary-200">Smarter Classrooms.</span>
                     </h1>
 
-                    <p className="text-lg text-blue-100 mb-8 leading-relaxed">
+                    <p className="text-lg text-primary-100 mb-8 leading-relaxed">
                         Join thousands of educational institutions transforming their attendance management with AI-driven insights and real-time tracking.
                     </p>
 
                     <div className="flex gap-4">
                         <div className="bg-white/10 border border-white/20 p-4 rounded-xl backdrop-blur-sm">
                             <p className="text-2xl font-bold">99.9%</p>
-                            <p className="text-sm text-blue-200">Uptime Reliability</p>
+                            <p className="text-sm text-primary-200">Uptime Reliability</p>
                         </div>
                         <div className="bg-white/10 border border-white/20 p-4 rounded-xl backdrop-blur-sm">
                             <p className="text-2xl font-bold">50k+</p>
-                            <p className="text-sm text-blue-200">Active Students</p>
+                            <p className="text-sm text-primary-200">Active Students</p>
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,10 @@ import Register from './pages/Register';
 import ForgotPassword from './pages/ForgotPassword';
 import DashboardLayout from './layouts/DashboardLayout';
 import TeacherClasses from './pages/dashboard/TeacherClasses';
+import ClassDetails from './pages/dashboard/ClassDetails';
+import Assignments from './pages/dashboard/Assignments';
+import StudentLayout from './layouts/StudentLayout';
+import StudentScan from './pages/student/StudentScan';
 
 function App() {
   return (
@@ -23,7 +27,14 @@ function App() {
         {/* Dashboard Routes */}
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route path="classes" element={<TeacherClasses />} />
+          <Route path="classes/:id" element={<ClassDetails />} />
+          <Route path="assignments" element={<Assignments />} />
           {/* Add more dashboard routes here */}
+        </Route>
+
+        {/* Student Routes */}
+        <Route path="/student" element={<StudentLayout />}>
+          <Route path="scan" element={<StudentScan />} />
         </Route>
       </Routes>
     </Router>

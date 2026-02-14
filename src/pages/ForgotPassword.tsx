@@ -19,13 +19,13 @@ const ForgotPassword = () => {
                         <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
                         <input
                             type="email"
-                            className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+                            className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
                             placeholder="you@edutrace.com"
                         />
                     </div>
                 </div>
 
-                <button className="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 hover:-translate-y-0.5 transition-all shadow-lg shadow-blue-600/20">
+                <button className="w-full bg-gradient-to-r from-primary-600 to-primary-500 text-white py-3 rounded-xl font-bold hover:from-primary-700 hover:to-primary-600 hover:-translate-y-0.5 transition-all shadow-lg shadow-primary-600/20">
                     Send Reset Link
                 </button>
             </form>

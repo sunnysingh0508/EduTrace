@@ -11,20 +11,20 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
-                    <div className="flex items-center gap-2 cursor-pointer">
-                        <div className="bg-blue-600 p-2 rounded-lg">
+                    <Link to="/" className="flex items-center gap-2 cursor-pointer">
+                        <div className="bg-primary-600 p-2 rounded-lg">
                             <ShieldCheck className="w-6 h-6 text-white" />
                         </div>
                         <span className="text-2xl font-bold text-slate-800 tracking-tight">EduTrace</span>
-                    </div>
+                    </Link>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-8">
-                        <a href="#features" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Features</a>
-                        <a href="#how-it-works" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">How it Works</a>
-                        <a href="#testimonials" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Testimonials</a>
-                        <Link to="/login" className="text-gray-600 hover:text-blue-600 font-medium transition-colors">Log In</Link>
-                        <Link to="/register" className="bg-blue-600 text-white px-5 py-2.5 rounded-xl font-medium hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20">
+                        <a href="#features" className="text-gray-600 hover:text-primary-600 font-medium transition-colors">Features</a>
+                        <a href="#how-it-works" className="text-gray-600 hover:text-primary-600 font-medium transition-colors">How it Works</a>
+                        <a href="#testimonials" className="text-gray-600 hover:text-primary-600 font-medium transition-colors">Testimonials</a>
+                        <Link to="/login" className="text-gray-600 hover:text-primary-600 font-medium transition-colors">Log In</Link>
+                        <Link to="/register" className="bg-gradient-to-r from-primary-600 to-primary-500 text-white px-5 py-2.5 rounded-xl font-medium hover:from-primary-700 hover:to-primary-600 transition-all shadow-lg shadow-primary-600/20">
                             Get Started
                         </Link>
                     </div>
@@ -48,12 +48,12 @@ const Navbar = () => {
                         className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
                     >
                         <div className="px-4 pt-4 pb-6 space-y-4">
-                            <a href="#features" onClick={() => setIsOpen(false)} className="block text-gray-600 hover:text-blue-600 font-medium py-2">Features</a>
-                            <a href="#how-it-works" onClick={() => setIsOpen(false)} className="block text-gray-600 hover:text-blue-600 font-medium py-2">How it Works</a>
-                            <a href="#testimonials" onClick={() => setIsOpen(false)} className="block text-gray-600 hover:text-blue-600 font-medium py-2">Testimonials</a>
+                            <a href="#features" onClick={() => setIsOpen(false)} className="block text-gray-600 hover:text-primary-600 font-medium py-2">Features</a>
+                            <a href="#how-it-works" onClick={() => setIsOpen(false)} className="block text-gray-600 hover:text-primary-600 font-medium py-2">How it Works</a>
+                            <a href="#testimonials" onClick={() => setIsOpen(false)} className="block text-gray-600 hover:text-primary-600 font-medium py-2">Testimonials</a>
                             <div className="pt-4 flex flex-col gap-3">
-                                <Link to="/login" className="block w-full text-center text-gray-600 hover:text-blue-600 font-medium py-2 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors">Log In</Link>
-                                <Link to="/register" className="block w-full text-center bg-blue-600 text-white py-3 rounded-xl font-medium hover:bg-blue-700 shadow-lg shadow-blue-600/20">Get Started</Link>
+                                <Link to="/login" className="block w-full text-center text-gray-600 hover:text-primary-600 font-medium py-2 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors">Log In</Link>
+                                <Link to="/register" className="block w-full text-center bg-primary-600 text-white py-3 rounded-xl font-medium hover:bg-primary-700 shadow-lg shadow-primary-600/20">Get Started</Link>
                             </div>
                         </div>
                     </motion.div>

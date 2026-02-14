@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { CheckCircle2, AlertTriangle, TrendingUp } from 'lucide-react';
+import { CheckCircle, TriangleAlert, TrendingUp } from 'lucide-react';
 
 const DashboardShowcase = () => {
     return (
@@ -39,7 +39,7 @@ const DashboardShowcase = () => {
                             <div className="hidden lg:block col-span-1 bg-white rounded-xl border border-gray-100 p-4 space-y-4">
                                 <div className="h-8 w-3/4 bg-gray-100 rounded mb-8"></div>
                                 {[1, 2, 3, 4, 5].map(i => (
-                                    <div key={i} className="h-10 w-full bg-gray-50 rounded hover:bg-blue-50 transition-colors"></div>
+                                    <div key={i} className="h-10 w-full bg-gray-50 rounded hover:bg-primary-50 transition-colors"></div>
                                 ))}
                             </div>
 
@@ -49,7 +49,7 @@ const DashboardShowcase = () => {
                                 <div className="grid sm:grid-cols-3 gap-4">
                                     <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
                                         <div className="flex justify-between items-start mb-2">
-                                            <div className="p-2 bg-blue-50 rounded-lg text-blue-600"><CheckCircle2 size={20} /></div>
+                                            <div className="p-2 bg-primary-50 rounded-lg text-primary-600"><CheckCircle size={20} /></div>
                                             <span className="text-green-500 text-xs font-bold">+4.5%</span>
                                         </div>
                                         <div className="text-2xl font-bold text-slate-800">92.8%</div>
@@ -57,7 +57,7 @@ const DashboardShowcase = () => {
                                     </div>
                                     <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
                                         <div className="flex justify-between items-start mb-2">
-                                            <div className="p-2 bg-red-50 rounded-lg text-red-600"><AlertTriangle size={20} /></div>
+                                            <div className="p-2 bg-red-50 rounded-lg text-red-600"><TriangleAlert size={20} /></div>
                                             <span className="text-red-500 text-xs font-bold">-12%</span>
                                         </div>
                                         <div className="text-2xl font-bold text-slate-800">14</div>
@@ -66,7 +66,7 @@ const DashboardShowcase = () => {
                                     <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
                                         <div className="flex justify-between items-start mb-2">
                                             <div className="p-2 bg-emerald-50 rounded-lg text-emerald-600"><TrendingUp size={20} /></div>
-                                            <span className="text-blue-500 text-xs font-bold">On Track</span>
+                                            <span className="text-primary-500 text-xs font-bold">On Track</span>
                                         </div>
                                         <div className="text-2xl font-bold text-slate-800">85%</div>
                                         <div className="text-xs text-gray-500">Syllabus Completion</div>

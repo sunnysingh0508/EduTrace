@@ -1,4 +1,4 @@
-import { UserX, FileWarning, HelpCircle } from 'lucide-react';
+import { UserX, FileWarning, CircleHelp } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const problems = [
@@ -13,7 +13,7 @@ const problems = [
         description: "Teachers waste valuable class time managing physical registers and entry sheets."
     },
     {
-        icon: <HelpCircle className="w-7 h-7 text-blue-500" />,
+        icon: <CircleHelp className="w-7 h-7 text-primary-500" />,
         title: "No Curriculum Transparency",
         description: "Lack of real-time tracking leads to syllabus lags and last-minute rushing."
     }

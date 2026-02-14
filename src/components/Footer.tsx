@@ -9,7 +9,7 @@ const Footer = () => {
                     {/* Brand Column */}
                     <div className="col-span-1 md:col-span-1">
                         <div className="flex items-center gap-2 mb-6">
-                            <div className="bg-blue-600 p-1.5 rounded-lg">
+                            <div className="bg-primary-600 p-1.5 rounded-lg">
                                 <ShieldCheck className="w-5 h-5 text-white" />
                             </div>
                             <span className="text-xl font-bold text-white tracking-tight">EduTrace</span>

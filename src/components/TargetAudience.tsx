@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const audiences = [
     {
-        icon: <GraduationCap className="w-8 h-8 text-blue-600" />,
+        icon: <GraduationCap className="w-8 h-8 text-primary-600" />,
         title: "Colleges",
         description: "Manage large campuses with department-wise tracking."
     },

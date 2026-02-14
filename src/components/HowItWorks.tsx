@@ -45,8 +45,8 @@ const HowItWorks = () => {
                             className="relative z-10 flex flex-col items-center text-center"
                         >
                             <div className="w-24 h-24 rounded-full bg-slate-800 border-4 border-slate-900 flex items-center justify-center mb-6 shadow-xl relative group">
-                                <span className="text-3xl font-bold text-blue-500 group-hover:scale-110 transition-transform">{step.number}</span>
-                                <div className="absolute inset-0 rounded-full border border-slate-700 group-hover:border-blue-500/50 transition-colors"></div>
+                                <span className="text-3xl font-bold text-primary-500 group-hover:scale-110 transition-transform">{step.number}</span>
+                                <div className="absolute inset-0 rounded-full border border-slate-700 group-hover:border-primary-500/50 transition-colors"></div>
                             </div>
 
                             <h3 className="text-xl font-bold mb-3">{step.title}</h3>
