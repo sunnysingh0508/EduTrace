@@ -46,7 +46,7 @@ const Sidebar = () => {
 
             {/* Profile / Logout Section */}
             <div className="p-4 border-t border-gray-100">
-                <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer group">
+                <Link to="/dashboard/profile" className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer group">
                     <div className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-bold">
                         JD
                     </div>
@@ -55,7 +55,7 @@ const Sidebar = () => {
                         <p className="text-xs text-gray-500">Teacher</p>
                     </div>
                     <LogOut size={18} className="text-gray-400 group-hover:text-red-500 transition-colors" />
-                </div>
+                </Link>
             </div>
         </div>
     );

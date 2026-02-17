@@ -1,8 +1,10 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate, Link } from 'react-router-dom';
 import Sidebar from '../components/dashboard/Sidebar';
 import { Bell, Search, User } from 'lucide-react';
 
 const DashboardLayout = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="min-h-screen bg-gray-50 flex">
             {/* Fixed Sidebar */}
@@ -24,13 +26,16 @@ const DashboardLayout = () => {
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <button className="p-2.5 text-gray-500 hover:bg-gray-100 rounded-xl transition-colors relative">
+                        <button
+                            onClick={() => navigate('/dashboard/reminders')}
+                            className="p-2.5 text-gray-500 hover:bg-gray-100 rounded-xl transition-colors relative"
+                        >
                             <Bell size={20} />
                             <span className="absolute top-2 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
                         </button>
-                        <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-300 transition-colors cursor-pointer hidden md:flex">
+                        <Link to="/dashboard/profile" className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:bg-gray-300 transition-colors cursor-pointer hidden md:flex">
                             <User size={20} />
-                        </div>
+                        </Link>
                     </div>
                 </header>
 

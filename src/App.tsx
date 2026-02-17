@@ -8,6 +8,8 @@ import DashboardLayout from './layouts/DashboardLayout';
 import TeacherClasses from './pages/dashboard/TeacherClasses';
 import ClassDetails from './pages/dashboard/ClassDetails';
 import Assignments from './pages/dashboard/Assignments';
+import Reminders from './pages/dashboard/Reminders';
+import Profile from './pages/dashboard/Profile';
 import StudentLayout from './layouts/StudentLayout';
 import StudentScan from './pages/student/StudentScan';
 
@@ -29,7 +31,8 @@ function App() {
           <Route path="classes" element={<TeacherClasses />} />
           <Route path="classes/:id" element={<ClassDetails />} />
           <Route path="assignments" element={<Assignments />} />
-          {/* Add more dashboard routes here */}
+          <Route path="reminders" element={<Reminders />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
 
         {/* Student Routes */}
