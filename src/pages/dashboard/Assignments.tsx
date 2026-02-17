@@ -12,7 +12,6 @@ import {
     Calendar,
     X,
     UploadCloud,
-    File
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
