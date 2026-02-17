@@ -12,6 +12,7 @@ import Reminders from './pages/dashboard/Reminders';
 import Profile from './pages/dashboard/Profile';
 import StudentLayout from './layouts/StudentLayout';
 import StudentScan from './pages/student/StudentScan';
+import Settings from './pages/dashboard/Settings';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="assignments" element={<Assignments />} />
           <Route path="reminders" element={<Reminders />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="settings" element={<Settings />} />
         </Route>
 
         {/* Student Routes */}

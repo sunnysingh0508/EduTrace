@@ -1,4 +1,4 @@
-import { LayoutDashboard, BookOpen, LogOut, UserCheck, FileText, Bell } from 'lucide-react';
+import { LayoutDashboard, BookOpen, LogOut, UserCheck, FileText, Bell, Settings } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const menuItems = [
@@ -6,6 +6,7 @@ const menuItems = [
     { icon: BookOpen, label: 'Classes', path: '/dashboard/classes' },
     { icon: FileText, label: 'Assignments', path: '/dashboard/assignments' },
     { icon: Bell, label: 'Reminders', path: '/dashboard/reminders' },
+    { icon: Settings, label: 'Settings', path: '/dashboard/settings' },
 ];
 
 const Sidebar = () => {
