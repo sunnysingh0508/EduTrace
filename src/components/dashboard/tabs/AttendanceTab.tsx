@@ -33,11 +33,11 @@ const AttendanceTab = () => {
     return (
         <div className="max-w-2xl mx-auto py-10">
             <div className="text-center mb-10">
-                <h2 className="text-2xl font-bold text-slate-800 flex items-center justify-center gap-2">
-                    <QrCode className="text-primary-600" size={28} />
+                <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 flex items-center justify-center gap-2">
+                    <QrCode className="text-primary-600 dark:text-primary-400" size={28} />
                     Scan to Mark Attendance
                 </h2>
-                <p className="text-gray-500 mt-2">
+                <p className="text-gray-500 dark:text-slate-400 mt-2">
                     Students can scan this QR code with their EduTrace app to mark their attendance instantly.
                 </p>
             </div>
@@ -45,7 +45,7 @@ const AttendanceTab = () => {
             <div className="flex flex-col items-center">
                 <div className="flex flex-col md:flex-row items-center gap-8 md:items-start">
                     {/* QR Code Card */}
-                    <div className="bg-white p-6 rounded-3xl shadow-lg border border-gray-100 relative">
+                    <div className="bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-lg border border-gray-100 dark:border-slate-700 relative transition-colors">
                         {/* Animated Border/Glow effect to indicate active state */}
                         <motion.div
                             initial={{ opacity: 0.5 }}
@@ -54,7 +54,7 @@ const AttendanceTab = () => {
                             className="absolute inset-0 rounded-3xl border-2 border-primary-500 opacity-50 pointer-events-none"
                         />
 
-                        <div className="w-64 h-64 bg-gray-50 rounded-xl flex items-center justify-center overflow-hidden relative">
+                        <div className="w-64 h-64 bg-gray-50 dark:bg-white rounded-xl flex items-center justify-center overflow-hidden relative">
                             {/* QR Image */}
                             <img
                                 src={qrUrl}
@@ -72,18 +72,18 @@ const AttendanceTab = () => {
                         </div>
 
                         <div className="mt-6 flex items-center justify-between text-sm">
-                            <div className="flex items-center gap-2 text-gray-500 bg-gray-50 px-3 py-1.5 rounded-full">
+                            <div className="flex items-center gap-2 text-gray-500 dark:text-slate-400 bg-gray-50 dark:bg-slate-700/50 px-3 py-1.5 rounded-full">
                                 <Clock size={16} />
-                                <span>Refreshes in <span className="font-bold text-primary-600 w-4 inline-block text-center">{timeLeft}</span>s</span>
+                                <span>Refreshes in <span className="font-bold text-primary-600 dark:text-primary-400 w-4 inline-block text-center">{timeLeft}</span>s</span>
                             </div>
-                            <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                            <div className="flex items-center gap-1.5 text-xs text-gray-400 dark:text-slate-500">
                                 <RefreshCw size={12} className={timeLeft < 3 ? 'animate-spin' : ''} />
                                 <span>Auto-updating</span>
                             </div>
                         </div>
 
                         {/* Progress Bar */}
-                        <div className="h-1 w-full bg-gray-100 mt-4 rounded-full overflow-hidden">
+                        <div className="h-1 w-full bg-gray-100 dark:bg-slate-700 mt-4 rounded-full overflow-hidden">
                             <motion.div
                                 className="h-full bg-primary-500"
                                 initial={{ width: "100%" }}
@@ -95,28 +95,28 @@ const AttendanceTab = () => {
                     </div>
 
                     {/* PIN Code Fallback */}
-                    <div className="flex flex-col items-center justify-center bg-white p-6 rounded-3xl shadow-sm border border-gray-100 h-full min-h-[300px] min-w-[200px]">
-                        <h3 className="text-gray-500 font-medium mb-4 text-center">Or enter PIN</h3>
-                        <div className="bg-gray-100 p-4 rounded-2xl mb-2">
+                    <div className="flex flex-col items-center justify-center bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-sm border border-gray-100 dark:border-slate-700 h-full min-h-[300px] min-w-[200px] transition-colors">
+                        <h3 className="text-gray-500 dark:text-slate-400 font-medium mb-4 text-center">Or enter PIN</h3>
+                        <div className="bg-gray-100 dark:bg-slate-900 p-4 rounded-2xl mb-2 transition-colors">
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={pin}
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
-                                    className="text-5xl font-mono font-bold text-slate-800 tracking-widest"
+                                    className="text-5xl font-mono font-bold text-slate-800 dark:text-slate-100 tracking-widest"
                                 >
                                     {pin}
                                 </motion.div>
                             </AnimatePresence>
                         </div>
-                        <p className="text-xs text-gray-400 mt-4 text-center max-w-[150px]">
+                        <p className="text-xs text-gray-400 dark:text-slate-500 mt-4 text-center max-w-[150px]">
                             Enter this code if scanning fails. Refreshes every 10s.
                         </p>
                     </div>
                 </div>
 
-                <div className="mt-8 text-center bg-primary-50 text-primary-800 px-6 py-4 rounded-xl text-sm max-w-md border border-primary-100">
+                <div className="mt-8 text-center bg-primary-50 dark:bg-primary-900/10 text-primary-800 dark:text-primary-200 px-6 py-4 rounded-xl text-sm max-w-md border border-primary-100 dark:border-primary-900/20">
                     <strong>Note:</strong> This code is dynamically generated and changes every 10 seconds for security. Proxies or screenshots will expire.
                 </div>
             </div>

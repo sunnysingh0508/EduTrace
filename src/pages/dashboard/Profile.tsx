@@ -21,8 +21,8 @@ const Profile = () => {
             {/* Header Section */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                    <h1 className="text-2xl font-bold text-slate-800">Profile Settings</h1>
-                    <p className="text-slate-500 mt-1">Manage your account information and preferences</p>
+                    <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Profile Settings</h1>
+                    <p className="text-slate-500 dark:text-slate-400 mt-1">Manage your account information and preferences</p>
                 </div>
                 <button
                     onClick={() => document.getElementById('personal-info')?.scrollIntoView({ behavior: 'smooth' })}
@@ -34,11 +34,11 @@ const Profile = () => {
             </div>
 
             {/* Section 1: Profile Overview Card */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row items-center gap-8">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-slate-700 flex flex-col md:flex-row items-center gap-8 transition-colors">
                 {/* Avatar */}
                 <div className="relative group">
-                    <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center border-4 border-white shadow-md overflow-hidden">
-                        <span className="text-3xl font-bold text-gray-400">JD</span>
+                    <div className="w-24 h-24 rounded-full bg-gray-200 dark:bg-slate-700 flex items-center justify-center border-4 border-white dark:border-slate-800 shadow-md overflow-hidden">
+                        <span className="text-3xl font-bold text-gray-400 dark:text-slate-500">JD</span>
                         {/* <img src="/path/to/avatar.jpg" alt="Profile" className="w-full h-full object-cover" /> */}
                     </div>
                     <button className="absolute bottom-0 right-0 p-2 bg-primary-600 text-white rounded-full shadow-lg hover:bg-primary-700 transition transform hover:scale-105">
@@ -49,30 +49,30 @@ const Profile = () => {
                 {/* Info */}
                 <div className="flex-1 text-center md:text-left space-y-2">
                     <div className="flex items-center justify-center md:justify-start gap-2">
-                        <h2 className="text-xl font-bold text-slate-800">John Doe</h2>
-                        <div className="flex items-center gap-1 bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full text-xs font-semibold border border-blue-100">
+                        <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100">John Doe</h2>
+                        <div className="flex items-center gap-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded-full text-xs font-semibold border border-blue-100 dark:border-blue-900/30">
                             <CheckCircle className="w-3 h-3" />
                             Verified Educator
                         </div>
                     </div>
 
-                    <div className="flex flex-wrap justify-center md:justify-start gap-3 text-sm text-slate-500">
-                        <span className="flex items-center gap-1.5 px-2 py-1 bg-gray-50 rounded-lg border border-gray-100">
-                            <Briefcase className="w-3.5 h-3.5 text-gray-400" />
+                    <div className="flex flex-wrap justify-center md:justify-start gap-3 text-sm text-slate-500 dark:text-slate-400">
+                        <span className="flex items-center gap-1.5 px-2 py-1 bg-gray-50 dark:bg-slate-700/50 rounded-lg border border-gray-100 dark:border-slate-700">
+                            <Briefcase className="w-3.5 h-3.5 text-gray-400 dark:text-slate-500" />
                             Senior Mathematics Teacher
                         </span>
-                        <span className="flex items-center gap-1.5 px-2 py-1 bg-gray-50 rounded-lg border border-gray-100">
-                            <Building className="w-3.5 h-3.5 text-gray-400" />
+                        <span className="flex items-center gap-1.5 px-2 py-1 bg-gray-50 dark:bg-slate-700/50 rounded-lg border border-gray-100 dark:border-slate-700">
+                            <Building className="w-3.5 h-3.5 text-gray-400 dark:text-slate-500" />
                             Springfield High School
                         </span>
                     </div>
 
-                    <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-1 text-sm text-slate-500">
-                        <span className="flex items-center gap-1.5 hover:text-primary-600 transition-colors">
+                    <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-1 text-sm text-slate-500 dark:text-slate-400">
+                        <span className="flex items-center gap-1.5 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                             <Mail className="w-3.5 h-3.5" />
                             john.doe@edu.trace
                         </span>
-                        <span className="flex items-center gap-1.5 hover:text-primary-600 transition-colors">
+                        <span className="flex items-center gap-1.5 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                             <Phone className="w-3.5 h-3.5" />
                             +1 (555) 123-4567
                         </span>
@@ -80,18 +80,18 @@ const Profile = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="flex gap-6 border-t md:border-t-0 md:border-l border-gray-100 pt-6 md:pt-0 md:pl-8">
+                <div className="flex gap-6 border-t md:border-t-0 md:border-l border-gray-100 dark:border-slate-700 pt-6 md:pt-0 md:pl-8">
                     <div className="text-center">
-                        <p className="text-2xl font-bold text-slate-800">12</p>
-                        <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">Classes</p>
+                        <p className="text-2xl font-bold text-slate-800 dark:text-slate-100">12</p>
+                        <p className="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Classes</p>
                     </div>
                     <div className="text-center">
-                        <p className="text-2xl font-bold text-slate-800">450</p>
-                        <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">Students</p>
+                        <p className="text-2xl font-bold text-slate-800 dark:text-slate-100">450</p>
+                        <p className="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Students</p>
                     </div>
                     <div className="text-center">
-                        <p className="text-2xl font-bold text-slate-800">8</p>
-                        <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">Years Exp.</p>
+                        <p className="text-2xl font-bold text-slate-800 dark:text-slate-100">8</p>
+                        <p className="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Years Exp.</p>
                     </div>
                 </div>
             </div>

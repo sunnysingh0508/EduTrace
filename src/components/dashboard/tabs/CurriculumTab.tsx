@@ -174,33 +174,33 @@ const CurriculumTab = () => {
         onSave,
         onCancel
     }: any) => (
-        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 mt-3 animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="bg-gray-50 dark:bg-slate-800 p-4 rounded-lg border border-gray-200 dark:border-slate-700 mt-3 animate-in fade-in slide-in-from-top-2 duration-200 transition-colors">
             <div className="space-y-3">
                 <input
                     type="text"
                     placeholder={titlePlaceholder}
                     value={titleValue}
                     onChange={(e) => setTitle(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-primary-400 text-sm font-medium"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-100 dark:focus:ring-primary-900/30 focus:border-primary-400 dark:focus:border-primary-500 text-sm font-medium text-slate-800 dark:text-slate-100 placeholder:text-gray-400 dark:placeholder:text-slate-500"
                     autoFocus
                 />
                 <textarea
                     placeholder={descPlaceholder}
                     value={descValue}
                     onChange={(e) => setDesc(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-primary-400 text-sm h-20 resize-none"
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-100 dark:focus:ring-primary-900/30 focus:border-primary-400 dark:focus:border-primary-500 text-sm h-20 resize-none text-slate-800 dark:text-slate-100 placeholder:text-gray-400 dark:placeholder:text-slate-500"
                 />
                 <div className="flex gap-2 justify-end">
                     <button
                         onClick={onCancel}
-                        className="px-3 py-1.5 text-sm text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
+                        className="px-3 py-1.5 text-sm text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:hover:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-md transition-colors"
                     >
                         Cancel
                     </button>
                     <button
                         onClick={onSave}
                         disabled={!titleValue.trim()}
-                        className="px-3 py-1.5 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-3 py-1.5 text-sm bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         Save
                     </button>
@@ -213,11 +213,11 @@ const CurriculumTab = () => {
         <div className="max-w-4xl mx-auto pb-20">
             <div className="flex items-center justify-between mb-8">
                 <div>
-                    <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-                        <BookOpen className="text-primary-600" size={24} />
+                    <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+                        <BookOpen className="text-primary-600 dark:text-primary-400" size={24} />
                         Curriculum Setup
                     </h2>
-                    <p className="text-gray-500 text-sm mt-1">Design the course structure, units, and topics.</p>
+                    <p className="text-gray-500 dark:text-slate-400 text-sm mt-1">Design the course structure, units, and topics.</p>
                 </div>
                 {!isAddingUnit && (
                     <button
@@ -248,13 +248,13 @@ const CurriculumTab = () => {
 
             {/* Empty State */}
             {units.length === 0 && !isAddingUnit && (
-                <div className="text-center py-16 bg-gray-50 rounded-2xl border border-dashed border-gray-300">
-                    <Layers className="mx-auto h-12 w-12 text-gray-300 mb-3" />
-                    <h3 className="text-lg font-medium text-gray-900">No curriculum units yet</h3>
-                    <p className="text-gray-500 mb-6">Get started by creating your first learning unit.</p>
+                <div className="text-center py-16 bg-gray-50 dark:bg-slate-800/50 rounded-2xl border border-dashed border-gray-300 dark:border-slate-700 transition-colors">
+                    <Layers className="mx-auto h-12 w-12 text-gray-300 dark:text-slate-600 mb-3" />
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-slate-200">No curriculum units yet</h3>
+                    <p className="text-gray-500 dark:text-slate-400 mb-6">Get started by creating your first learning unit.</p>
                     <button
                         onClick={() => setIsAddingUnit(true)}
-                        className="px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+                        className="px-4 py-2 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-lg text-sm font-medium text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors"
                     >
                         Create First Unit
                     </button>
@@ -270,52 +270,52 @@ const CurriculumTab = () => {
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden"
+                            className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm overflow-hidden transition-colors"
                         >
                             {/* Unit Header */}
-                            <div className="bg-gray-50/50 p-4 flex items-start gap-3 group">
+                            <div className="bg-gray-50/50 dark:bg-slate-800 p-4 flex items-start gap-3 group">
                                 <button
                                     onClick={() => toggleUnitExpand(unit.id)}
-                                    className="pt-1 text-gray-400 hover:text-gray-600 transition-colors"
+                                    className="pt-1 text-gray-400 hover:text-gray-600 dark:hover:text-slate-300 transition-colors"
                                 >
                                     {unit.isExpanded ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
                                 </button>
                                 <div className="flex-1">
                                     <div className="flex items-center justify-between">
-                                        <h3 className="text-lg font-semibold text-slate-800">{unit.title}</h3>
+                                        <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200">{unit.title}</h3>
                                         <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                             <button
                                                 onClick={() => handleDeleteUnit(unit.id)}
-                                                className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                                                className="p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
                                                 title="Delete Unit"
                                             >
                                                 <Trash2 size={16} />
                                             </button>
                                         </div>
                                     </div>
-                                    {unit.description && <p className="text-gray-500 text-sm mt-1">{unit.description}</p>}
+                                    {unit.description && <p className="text-gray-500 dark:text-slate-400 text-sm mt-1">{unit.description}</p>}
                                 </div>
                             </div>
 
                             {/* Unit Content (Topics) */}
                             {unit.isExpanded && (
-                                <div className="p-4 border-t border-gray-100 bg-white">
-                                    <div className="pl-6 border-l-2 border-gray-100 space-y-6">
+                                <div className="p-4 border-t border-gray-100 dark:border-slate-700 bg-white dark:bg-slate-900 transition-colors">
+                                    <div className="pl-6 border-l-2 border-gray-100 dark:border-slate-800 space-y-6">
                                         {/* Topics List */}
                                         {unit.topics.map((topic) => (
                                             <div key={topic.id} className="relative">
                                                 {/* Topic Header */}
                                                 <div className="flex items-start gap-3 group/topic mb-3">
-                                                    <div className="absolute -left-[31px] top-2.5 w-4 h-4 rounded-full border-4 border-white bg-primary-100 ring-1 ring-primary-50"></div>
+                                                    <div className="absolute -left-[31px] top-2.5 w-4 h-4 rounded-full border-4 border-white dark:border-slate-900 bg-primary-100 dark:bg-primary-900 ring-1 ring-primary-50 dark:ring-primary-900/50"></div>
                                                     <button
                                                         onClick={() => toggleTopicExpand(unit.id, topic.id)}
-                                                        className="pt-0.5 text-gray-400 hover:text-gray-600"
+                                                        className="pt-0.5 text-gray-400 hover:text-gray-600 dark:hover:text-slate-300"
                                                     >
                                                         {topic.isExpanded ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
                                                     </button>
                                                     <div className="flex-1">
                                                         <div className="flex items-center gap-2">
-                                                            <h4 className="font-semibold text-slate-700">{topic.title}</h4>
+                                                            <h4 className="font-semibold text-slate-700 dark:text-slate-300">{topic.title}</h4>
                                                             <button
                                                                 onClick={() => handleDeleteTopic(unit.id, topic.id)}
                                                                 className="opacity-0 group-hover/topic:opacity-100 p-1 text-gray-300 hover:text-red-500 transition-all"
@@ -323,7 +323,7 @@ const CurriculumTab = () => {
                                                                 <Trash2 size={14} />
                                                             </button>
                                                         </div>
-                                                        {topic.description && <p className="text-gray-500 text-sm">{topic.description}</p>}
+                                                        {topic.description && <p className="text-gray-500 dark:text-slate-400 text-sm">{topic.description}</p>}
                                                     </div>
                                                 </div>
 
@@ -331,13 +331,13 @@ const CurriculumTab = () => {
                                                 {topic.isExpanded && (
                                                     <div className="pl-8 mb-4 space-y-3">
                                                         {topic.subtopics.map((subtopic) => (
-                                                            <div key={subtopic.id} className="bg-gray-50 p-3 rounded-lg border border-gray-100 group/sub">
+                                                            <div key={subtopic.id} className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-gray-100 dark:border-slate-700 group/sub transition-colors">
                                                                 <div className="flex justify-between items-start">
                                                                     <div className="flex items-start gap-2">
-                                                                        <FileText size={14} className="mt-1 text-gray-400" />
+                                                                        <FileText size={14} className="mt-1 text-gray-400 dark:text-slate-500" />
                                                                         <div>
-                                                                            <span className="text-sm font-medium text-slate-700 block">{subtopic.title}</span>
-                                                                            {subtopic.description && <span className="text-xs text-gray-500 block mt-0.5">{subtopic.description}</span>}
+                                                                            <span className="text-sm font-medium text-slate-700 dark:text-slate-300 block">{subtopic.title}</span>
+                                                                            {subtopic.description && <span className="text-xs text-gray-500 dark:text-slate-500 block mt-0.5">{subtopic.description}</span>}
                                                                         </div>
                                                                     </div>
                                                                     <button
@@ -352,24 +352,24 @@ const CurriculumTab = () => {
 
                                                         {/* Add Subtopic Action */}
                                                         {addingSubtopicToTopicId === topic.id ? (
-                                                            <div className="bg-white p-3 rounded-lg border border-primary-100 shadow-sm relative">
-                                                                <div className="absolute -left-4 top-4 w-3 h-px bg-primary-200"></div>
-                                                                <h5 className="text-xs font-bold text-primary-600 mb-2 uppercase tracking-wide">New Subtopic</h5>
+                                                            <div className="bg-white dark:bg-slate-800 p-3 rounded-lg border border-primary-100 dark:border-primary-900/30 shadow-sm relative transition-colors">
+                                                                <div className="absolute -left-4 top-4 w-3 h-px bg-primary-200 dark:bg-primary-900"></div>
+                                                                <h5 className="text-xs font-bold text-primary-600 dark:text-primary-400 mb-2 uppercase tracking-wide">New Subtopic</h5>
                                                                 <input
-                                                                    className="w-full text-sm border-b border-gray-200 py-1 focus:outline-none focus:border-primary-400 mb-2"
+                                                                    className="w-full text-sm border-b border-gray-200 dark:border-slate-700 py-1 focus:outline-none focus:border-primary-400 bg-transparent text-slate-800 dark:text-slate-200 mb-2"
                                                                     placeholder="Subtopic Title"
                                                                     value={newSubtopicTitle}
                                                                     onChange={(e) => setNewSubtopicTitle(e.target.value)}
                                                                     autoFocus
                                                                 />
                                                                 <input
-                                                                    className="w-full text-xs text-gray-500 border-b border-gray-200 py-1 focus:outline-none focus:border-primary-400 mb-2"
+                                                                    className="w-full text-xs text-gray-500 dark:text-slate-400 border-b border-gray-200 dark:border-slate-700 py-1 focus:outline-none focus:border-primary-400 bg-transparent mb-2"
                                                                     placeholder="Description (optional)"
                                                                     value={newSubtopicDesc}
                                                                     onChange={(e) => setNewSubtopicDesc(e.target.value)}
                                                                 />
                                                                 <div className="flex justify-end gap-2 mt-2">
-                                                                    <button onClick={() => setAddingSubtopicToTopicId(null)} className="text-xs text-gray-400 hover:text-gray-600">Cancel</button>
+                                                                    <button onClick={() => setAddingSubtopicToTopicId(null)} className="text-xs text-gray-400 hover:text-gray-600 dark:hover:text-slate-300">Cancel</button>
                                                                     <button
                                                                         onClick={() => handleAddSubtopic(unit.id, topic.id)}
                                                                         className="text-xs bg-primary-600 text-white px-2 py-1 rounded hover:bg-primary-700"
@@ -381,7 +381,7 @@ const CurriculumTab = () => {
                                                         ) : (
                                                             <button
                                                                 onClick={() => setAddingSubtopicToTopicId(topic.id)}
-                                                                className="flex items-center gap-2 text-xs text-primary-600 font-medium hover:text-primary-700 transition-colors py-1"
+                                                                className="flex items-center gap-2 text-xs text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 transition-colors py-1"
                                                             >
                                                                 <Plus size={12} /> Add Subtopic
                                                             </button>
@@ -409,7 +409,7 @@ const CurriculumTab = () => {
                                     ) : (
                                         <button
                                             onClick={() => setAddingTopicToUnitId(unit.id)}
-                                            className="mt-4 ml-6 flex items-center gap-2 text-sm text-primary-600 font-medium hover:text-primary-700 hover:bg-primary-50 px-3 py-2 rounded-lg transition-colors w-fit"
+                                            className="mt-4 ml-6 flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 px-3 py-2 rounded-lg transition-colors w-fit"
                                         >
                                             <Plus size={16} /> Add Topic
                                         </button>

@@ -128,11 +128,10 @@ const Assignments = () => {
     return (
         <div className="p-6 space-y-6">
             {/* Header */}
-            {/* Header */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
-                    <h1 className="text-2xl font-bold text-slate-800">Assignment Manager</h1>
-                    <p className="text-sm text-gray-500">Create and monitor class assignments</p>
+                    <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Assignment Manager</h1>
+                    <p className="text-sm text-gray-500 dark:text-slate-400">Create and monitor class assignments</p>
                 </div>
                 <button
                     onClick={() => setIsModalOpen(true)}
@@ -147,29 +146,29 @@ const Assignments = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div
                     onClick={() => setFilterStatus('All')}
-                    className={`bg-white rounded-2xl p-4 shadow-md border cursor-pointer transition-all ${filterStatus === 'All' ? 'border-primary-500 ring-2 ring-primary-100' : 'border-gray-100 hover:border-primary-200'}`}
+                    className={`bg-white dark:bg-slate-900 rounded-2xl p-4 shadow-md border cursor-pointer transition-all ${filterStatus === 'All' ? 'border-primary-500 ring-2 ring-primary-100 dark:ring-primary-900/30' : 'border-gray-100 dark:border-slate-800 hover:border-primary-200 dark:hover:border-primary-900/50'}`}
                 >
                     <div className="flex items-center gap-4">
-                        <div className="p-3 bg-primary-50 text-primary-600 rounded-xl">
+                        <div className="p-3 bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 rounded-xl">
                             <FileText size={24} />
                         </div>
                         <div>
-                            <p className="text-sm text-gray-500 font-medium">Total Assignments</p>
-                            <p className="text-2xl font-bold text-slate-800">{assignmentsList.length}</p>
+                            <p className="text-sm text-gray-500 dark:text-slate-400 font-medium">Total Assignments</p>
+                            <p className="text-2xl font-bold text-slate-800 dark:text-slate-100">{assignmentsList.length}</p>
                         </div>
                     </div>
                 </div>
                 <div
                     onClick={() => setFilterStatus('Active')}
-                    className={`bg-white rounded-2xl p-4 shadow-md border cursor-pointer transition-all ${filterStatus === 'Active' ? 'border-emerald-500 ring-2 ring-emerald-100' : 'border-gray-100 hover:border-emerald-200'}`}
+                    className={`bg-white dark:bg-slate-900 rounded-2xl p-4 shadow-md border cursor-pointer transition-all ${filterStatus === 'Active' ? 'border-emerald-500 ring-2 ring-emerald-100 dark:ring-emerald-900/30' : 'border-gray-100 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-900/50'}`}
                 >
                     <div className="flex items-center gap-4">
-                        <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl">
+                        <div className="p-3 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 rounded-xl">
                             <CheckCircle size={24} />
                         </div>
                         <div>
-                            <p className="text-sm text-gray-500 font-medium">Active Assignments</p>
-                            <p className="text-2xl font-bold text-slate-800">
+                            <p className="text-sm text-gray-500 dark:text-slate-400 font-medium">Active Assignments</p>
+                            <p className="text-2xl font-bold text-slate-800 dark:text-slate-100">
                                 {assignmentsList.filter(a => a.status === 'Active').length}
                             </p>
                         </div>
@@ -177,15 +176,15 @@ const Assignments = () => {
                 </div>
                 <div
                     onClick={() => setFilterStatus('Overdue')}
-                    className={`bg-white rounded-2xl p-4 shadow-md border cursor-pointer transition-all ${filterStatus === 'Overdue' ? 'border-red-500 ring-2 ring-red-100' : 'border-gray-100 hover:border-red-200'}`}
+                    className={`bg-white dark:bg-slate-900 rounded-2xl p-4 shadow-md border cursor-pointer transition-all ${filterStatus === 'Overdue' ? 'border-red-500 ring-2 ring-red-100 dark:ring-red-900/30' : 'border-gray-100 dark:border-slate-800 hover:border-red-200 dark:hover:border-red-900/50'}`}
                 >
                     <div className="flex items-center gap-4">
-                        <div className="p-3 bg-red-50 text-red-600 rounded-xl">
+                        <div className="p-3 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-xl">
                             <AlertCircle size={24} />
                         </div>
                         <div>
-                            <p className="text-sm text-gray-500 font-medium">Late Submissions</p>
-                            <p className="text-2xl font-bold text-slate-800">
+                            <p className="text-sm text-gray-500 dark:text-slate-400 font-medium">Late Submissions</p>
+                            <p className="text-2xl font-bold text-slate-800 dark:text-slate-100">
                                 {assignmentsList.filter(a => a.status === 'Overdue').length}
                             </p>
                         </div>
@@ -194,8 +193,8 @@ const Assignments = () => {
             </div>
 
             {/* Smart Alert Strip */}
-            <div className="bg-yellow-50 border border-yellow-100 rounded-xl p-4 flex items-center gap-3 text-yellow-800 shadow-sm">
-                <Clock size={20} className="text-yellow-600" />
+            <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-100 dark:border-yellow-900/30 rounded-xl p-4 flex items-center gap-3 text-yellow-800 dark:text-yellow-200 shadow-sm">
+                <Clock size={20} className="text-yellow-600 dark:text-yellow-400" />
                 <span className="font-medium text-sm">Action Required: 2 assignments are due this week.</span>
             </div>
 
@@ -301,13 +300,13 @@ const Assignments = () => {
                             initial={{ opacity: 0, scale: 0.95, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                            className="bg-white rounded-2xl w-full max-w-lg shadow-xl relative z-10 overflow-hidden"
+                            className="bg-white dark:bg-slate-900 rounded-2xl w-full max-w-lg shadow-xl relative z-10 overflow-hidden transition-colors"
                         >
-                            <div className="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50">
-                                <h3 className="text-lg font-bold text-slate-800">Create New Assignment</h3>
+                            <div className="p-6 border-b border-gray-100 dark:border-slate-800 flex justify-between items-center bg-gray-50 dark:bg-slate-800/50">
+                                <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">Create New Assignment</h3>
                                 <button
                                     onClick={handleCloseModal}
-                                    className="text-gray-400 hover:text-gray-600 transition-colors p-1"
+                                    className="text-gray-400 hover:text-gray-600 dark:hover:text-slate-300 transition-colors p-1"
                                 >
                                     <X size={20} />
                                 </button>
@@ -315,11 +314,11 @@ const Assignments = () => {
 
                             <div className="p-6 space-y-4">
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Assignment Title</label>
+                                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Assignment Title</label>
                                     <input
                                         type="text"
                                         placeholder="e.g., Final Project Submission"
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow"
+                                        className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all placeholder:text-gray-400 dark:placeholder:text-slate-500"
                                         value={title}
                                         onChange={(e) => setTitle(e.target.value)}
                                     />
@@ -327,9 +326,9 @@ const Assignments = () => {
 
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                        <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Subject</label>
                                         <select
-                                            className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white"
+                                            className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 transition-colors"
                                             value={subject}
                                             onChange={(e) => setSubject(e.target.value)}
                                         >
@@ -339,10 +338,10 @@ const Assignments = () => {
                                         </select>
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Due Date</label>
+                                        <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Due Date</label>
                                         <input
                                             type="date"
-                                            className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500"
+                                            className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
                                             value={dueDate}
                                             onChange={(e) => setDueDate(e.target.value)}
                                         />
@@ -350,18 +349,18 @@ const Assignments = () => {
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Description</label>
                                     <textarea
                                         rows={3}
                                         placeholder="Enter assignment details..."
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow resize-none"
+                                        className="w-full px-4 py-2 border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none placeholder:text-gray-400 dark:placeholder:text-slate-500"
                                         value={description}
                                         onChange={(e) => setDescription(e.target.value)}
                                     ></textarea>
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Attach File</label>
+                                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Attach File</label>
                                     <input
                                         type="file"
                                         ref={fileInputRef}
@@ -370,12 +369,12 @@ const Assignments = () => {
                                     />
                                     <div
                                         onClick={handleFileClick}
-                                        className="border-2 border-dashed border-gray-300 rounded-xl p-4 text-center hover:bg-gray-50 transition-colors cursor-pointer group"
+                                        className="border-2 border-dashed border-gray-300 dark:border-slate-700 rounded-xl p-4 text-center hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer group"
                                     >
-                                        <UploadCloud className="mx-auto h-8 w-8 text-gray-400 group-hover:text-primary-500 transition-colors" />
-                                        <p className="mt-1 text-sm text-gray-500">
+                                        <UploadCloud className="mx-auto h-8 w-8 text-gray-400 dark:text-slate-500 group-hover:text-primary-500 transition-colors" />
+                                        <p className="mt-1 text-sm text-gray-500 dark:text-slate-400">
                                             {selectedFile ? (
-                                                <span className="text-primary-600 font-medium">{selectedFile.name}</span>
+                                                <span className="text-primary-600 dark:text-primary-400 font-medium">{selectedFile.name}</span>
                                             ) : (
                                                 "Click to upload or drag and drop"
                                             )}
@@ -388,18 +387,18 @@ const Assignments = () => {
                                         <input
                                             type="checkbox"
                                             id="late"
-                                            className="w-4 h-4 text-primary-600 rounded focus:ring-primary-500 border-gray-300"
+                                            className="w-4 h-4 text-primary-600 rounded focus:ring-primary-500 border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800"
                                             checked={allowLate}
                                             onChange={(e) => setAllowLate(e.target.checked)}
                                         />
-                                        <label htmlFor="late" className="text-sm text-gray-600">Allow late submissions</label>
+                                        <label htmlFor="late" className="text-sm text-gray-600 dark:text-slate-400">Allow late submissions</label>
                                     </div>
                                     <div className="w-32">
-                                        <label className="block text-xs font-medium text-gray-500 mb-1">Total Marks</label>
+                                        <label className="block text-xs font-medium text-gray-500 dark:text-slate-400 mb-1">Total Marks</label>
                                         <input
                                             type="number"
                                             placeholder="100"
-                                            className="w-full px-3 py-1.5 border border-gray-300 rounded-lg text-sm"
+                                            className="w-full px-3 py-1.5 border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-lg text-sm transition-colors"
                                             value={totalMarks}
                                             onChange={(e) => setTotalMarks(e.target.value)}
                                         />
@@ -407,10 +406,10 @@ const Assignments = () => {
                                 </div>
                             </div>
 
-                            <div className="p-6 border-t border-gray-100 flex gap-3 justify-end bg-gray-50">
+                            <div className="p-6 border-t border-gray-100 dark:border-slate-800 flex gap-3 justify-end bg-gray-50 dark:bg-slate-800/50">
                                 <button
                                     onClick={handleCloseModal}
-                                    className="px-5 py-2.5 rounded-xl border border-gray-300 text-gray-700 font-medium hover:bg-gray-100 transition-colors"
+                                    className="px-5 py-2.5 rounded-xl border border-gray-300 dark:border-slate-700 text-gray-700 dark:text-slate-300 font-medium hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
                                 >
                                     Cancel
                                 </button>

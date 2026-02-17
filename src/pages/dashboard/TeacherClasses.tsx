@@ -30,11 +30,11 @@ const TeacherClasses = () => {
             {/* Header Section */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
                 <div>
-                    <h1 className="text-2xl font-bold text-slate-800">My Classes</h1>
-                    <p className="text-gray-500 text-sm mt-1">Manage your active courses and attendance</p>
+                    <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100">My Classes</h1>
+                    <p className="text-gray-500 dark:text-slate-400 text-sm mt-1">Manage your active courses and attendance</p>
                 </div>
                 <div className="flex gap-3">
-                    <button className="flex items-center gap-2 px-4 py-2.5 bg-white border border-gray-200 text-slate-700 rounded-xl font-medium hover:bg-gray-50 transition-colors">
+                    <button className="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 rounded-xl font-medium hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors">
                         <Filter size={18} />
                         Filter
                     </button>
@@ -58,7 +58,7 @@ const TeacherClasses = () => {
                     placeholder="Search classes..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 outline-none focus:border-primary-500 transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 outline-none focus:border-primary-500 transition-all placeholder:text-gray-400 dark:placeholder:text-slate-500"
                 />
             </div>
 
@@ -70,8 +70,8 @@ const TeacherClasses = () => {
                     })}
                 </div>
             ) : (
-                <div className="text-center py-20 bg-white rounded-2xl border border-dashed border-gray-200">
-                    <p className="text-gray-500">No classes found matching your search.</p>
+                <div className="text-center py-20 bg-white dark:bg-slate-800/50 rounded-2xl border border-dashed border-gray-200 dark:border-slate-700 transition-colors">
+                    <p className="text-gray-500 dark:text-slate-400">No classes found matching your search.</p>
                 </div>
             )}
 

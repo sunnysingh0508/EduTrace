@@ -36,7 +36,7 @@ const ClassDetails = () => {
             {/* Header / Back Button */}
             <button
                 onClick={() => navigate('/dashboard/classes')}
-                className="flex items-center gap-2 text-gray-500 hover:text-slate-800 transition-colors mb-6"
+                className="flex items-center gap-2 text-gray-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors mb-6"
             >
                 <ArrowLeft size={18} />
                 Back to Classes
@@ -45,18 +45,18 @@ const ClassDetails = () => {
             {/* Class Title Section */}
             <div className="mb-8">
                 <div className="flex items-center gap-3 mb-2">
-                    <h1 className="text-3xl font-bold text-slate-800">{classInfo.name}</h1>
-                    <span className="bg-primary-50 text-primary-600 px-3 py-1 rounded-full text-xs font-bold border border-primary-100">
+                    <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100">{classInfo.name}</h1>
+                    <span className="bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 px-3 py-1 rounded-full text-xs font-bold border border-primary-100 dark:border-primary-900/30">
                         {classInfo.semester}
                     </span>
                 </div>
-                <p className="text-gray-500 font-medium">
+                <p className="text-gray-500 dark:text-slate-400 font-medium">
                     {classInfo.subject} • {classInfo.section}
                 </p>
             </div>
 
             {/* Sub-Navigation (Segmented Control) */}
-            <div className="bg-gray-100 rounded-xl p-1 flex gap-2 mb-8 overflow-x-auto">
+            <div className="bg-gray-100 dark:bg-slate-800 rounded-xl p-1 flex gap-2 mb-8 overflow-x-auto transition-colors">
                 {tabs.map((tab) => {
                     const isActive = activeTab === tab.id;
                     const Icon = tab.icon;
@@ -65,11 +65,11 @@ const ClassDetails = () => {
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all whitespace-nowrap flex-1 justify-center ${isActive
-                                ? 'bg-white text-primary-600 shadow-sm'
-                                : 'text-gray-600 hover:bg-white/50'
+                                ? 'bg-white dark:bg-slate-700 text-primary-600 dark:text-primary-400 shadow-sm'
+                                : 'text-gray-600 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-700/50'
                                 }`}
                         >
-                            <Icon size={16} className={isActive ? 'text-primary-600' : 'text-gray-400'} />
+                            <Icon size={16} className={isActive ? 'text-primary-600 dark:text-primary-400' : 'text-gray-400 dark:text-slate-500'} />
                             {tab.label}
                         </button>
                     );
@@ -82,7 +82,7 @@ const ClassDetails = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2 }}
-                className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 min-h-[400px]"
+                className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-800 p-8 min-h-[400px] transition-colors"
             >
                 {activeTab === 'curriculum' && (
                     <CurriculumTab />
